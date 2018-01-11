@@ -23,7 +23,7 @@
 		return 0;
 	}
 	
-	NSUInteger componentsFlag = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay;
+	NSUInteger componentsFlag = NSCalendarUnitYear | NSCalendarUnitMonth| NSCalendarUnitDay;
 	NSDateComponents* componentsNow = [calendar components:componentsFlag fromDate:[NSDate date]];
 	NSDateComponents* compnentsThen = [calendar components:componentsFlag fromDate:self];
 	
@@ -87,6 +87,12 @@
 	NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
 	formatter.timeZone = [NSTimeZone timeZoneWithAbbreviation: @"GMT"];
 	formatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ss'Z'";
+	return [formatter dateFromString: anISO8601String];
+}
+
++ (NSDate *)dateFromISO8601TruncatedString:(NSString *)anISO8601String {
+	NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+	formatter.dateFormat = @"yyyy-MM-dd";
 	return [formatter dateFromString: anISO8601String];
 }
 
