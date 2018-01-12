@@ -23,7 +23,7 @@
 		return 0;
 	}
 	
-	NSUInteger componentsFlag = NSCalendarUnitYear | NSCalendarUnitMonth| NSCalendarUnitDay;
+	NSUInteger componentsFlag = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay;
 	NSDateComponents* componentsNow = [calendar components:componentsFlag fromDate:[NSDate date]];
 	NSDateComponents* compnentsThen = [calendar components:componentsFlag fromDate:self];
 	
